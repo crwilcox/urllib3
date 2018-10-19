@@ -27,6 +27,7 @@ It is recommended, and even enforced by the make file, that you use a
   $ python3 -m venv venv3
   $ source venv3/bin/activate
   $ pip install -r dev-requirements.txt
+  $ make test-quick
 
 
 Running the tests
@@ -65,6 +66,15 @@ suite::
 Our test suite `runs continuously on Travis CI
 <https://travis-ci.org/urllib3/urllib3>`_ with every pull request.
 
+Running the tests using Nox
+---------------------------
+The currently supported tests use tox, but a noxfile has been created to allow running using nox instead.
+
+If you want to run unit tests on all versions:
+  $ nox -s unit
+
+If you want to run a specific test, for instance the unit tests for python 3.7:
+  $ nox -s unit-3.7
 
 Sponsorship
 -----------
